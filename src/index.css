@@ -1,0 +1,27 @@
+* {
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  list-style: none;
+}
+
+.page_wrapper {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  width: 50px;
+}
+
+.nav-items {
+  display: flex;
+}
+
+.nav-items > li {
+  padding: 10px;
+}
