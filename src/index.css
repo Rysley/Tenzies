@@ -12,9 +12,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: bisque;
 }
 
 .nav-logo {
+  padding-left: 1rem;
   width: 50px;
 }
 
@@ -23,5 +25,11 @@
 }
 
 .nav-items > li {
-  padding: 10px;
+  padding: 1rem; bn fghvb 
+  font-weight: 700;
+}
+
+.list-wrapper {
+  background-color: antiquewhite;
+  padding: 1rem 2rem;
 }
