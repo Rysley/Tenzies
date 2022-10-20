@@ -1,6 +1,13 @@
+@import url(./fonts.css);
+
 * {
-  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
   list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }
 
 .page_wrapper {
@@ -12,12 +19,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: bisque;
+  background-color: rgb(218, 208, 199);
+  color: rgb(173, 203, 238);
 }
 
 .nav-logo {
   padding-left: 1rem;
+  margin-right: 0.5rem;
   width: 50px;
+}
+
+.nav-logo svg {
+  fill: rgb(218, 208, 199);
 }
 
 .nav-items {
@@ -25,11 +38,12 @@
 }
 
 .nav-items > li {
-  padding: 1rem; bn fghvb 
+  padding: 1rem;
   font-weight: 700;
 }
 
 .list-wrapper {
-  background-color: antiquewhite;
+  background-color: rgba(4, 2, 12, 0.856);
+  color: rgb(221, 230, 238);
   padding: 1rem 2rem;
 }
