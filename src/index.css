@@ -79,3 +79,7 @@ body {
   transform: translateY(4px);
   margin-left: -1em;
 }
+
+.new-class {
+  width: auto;
+}
