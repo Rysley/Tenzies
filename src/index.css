@@ -17,10 +17,11 @@ body {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  margin-right: auto;
+  /*OR    justify-content: space-between; */
   align-items: center;
-  background-color: rgb(218, 208, 199);
-  color: rgb(173, 203, 238);
+  background-color: rgb(238, 244, 245);
+  color: rgb(122, 161, 206);
 }
 
 .nav-logo {
@@ -29,8 +30,13 @@ body {
   width: 50px;
 }
 
-.nav-logo svg {
+.nav-logo > svg path {
   fill: rgb(218, 208, 199);
+}
+
+.nav-logo-container {
+  letter-spacing: -0.07em;
+  font-weight: 700;
 }
 
 .nav-items {
@@ -43,7 +49,33 @@ body {
 }
 
 .list-wrapper {
+  background-image: url(./img/react-logo-transparent.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 60%;
+  background-position-x: 170%;
   background-color: rgba(4, 2, 12, 0.856);
   color: rgb(221, 230, 238);
   padding: 1rem 2rem;
+  filter: hue-rotate(40deg);
+}
+
+.list-wrapper > h1 {
+  letter-spacing: -0.05em;
+}
+
+.list-wrapper > ul {
+  padding-left: 1.4rem;
+  line-height: 2em;
+}
+
+.list-wrapper li::before {
+  content: '\2022';
+  color: rgb(221, 230, 238);
+  font-weight: bolder;
+  font-size: 2em;
+  display: inline-block;
+  width: 1em;
+  transform: translateY(4px);
+  margin-left: -1em;
 }
