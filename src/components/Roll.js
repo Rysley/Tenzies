@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default function Roll() {
+export default function Roll(props) {
   return (
     <div className="btn-container">
-      <button className="btn btn-roll">Roll</button>
+      <button onClick={props.handleRoll} className="btn btn-roll">
+        Roll
+      </button>
     </div>
   );
 }

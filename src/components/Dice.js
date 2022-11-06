@@ -1,18 +1,24 @@
 import React from 'react';
+import Die from './Die';
 
-export default function Dice() {
+export default function Dice(props) {
+  const style = { backgroundColor: 'blue' };
+
   return (
     <div className="dice-container">
-      <button className="btn dice-button">1</button>
-      <button className="btn dice-button">2</button>
-      <button className="btn dice-frozen dice-button">3</button>
-      <button className="btn dice-button">1</button>
-      <button className="btn dice-button">2</button>
-      <button className="btn dice-frozen dice-button">3</button>
-      <button className="btn dice-frozen dice-button">1</button>
-      <button className="btn dice-button">2</button>
-      <button className="btn dice-button">3</button>
-      <button className="btn dice-button">1</button>
+      {props.diceArray.map((dice, i) => {
+        console.log('dice', dice.isFrozen);
+        return (
+          <Die
+            diceArray={props.diceArray}
+            id={dice.id}
+            toggleFreeze={props.toggleFreeze}
+            key={i}
+            diceValue={dice.diceValue}
+            style={{ backgroundColor: dice.isFrozen ? 'lightblue' : 'white' }}
+          />
+        );
+      })}
     </div>
   );
 }
