@@ -1,8 +1,6 @@
 import React from 'react';
 
 export default function Die(props) {
-  console.log(props);
-
   return (
     <div
       onClick={props.toggleFreeze}

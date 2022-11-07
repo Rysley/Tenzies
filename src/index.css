@@ -84,6 +84,12 @@ body {
   width: auto;
   font-weight: 700;
   background: white;
+
+  /*   transition: all 2s; */
+}
+
+.die-button:hover {
+  transform: scale(1.1);
 }
 
 .die-frozen {
@@ -91,30 +97,29 @@ body {
 }
 
 .btn-container {
-  display: flex;
+  text-align: center;
 }
 
 .btn-roll {
-  justify-self: center;
-  margin-left: 50%;
-  margin-right: 50%;
-  transform: translateX(-50%);
+  display: inline-block;
+  text-align: center;
   background: #422cd3;
   color: aliceblue;
   padding: 0.2em;
   padding-left: 2em;
   padding-right: 2em;
   opacity: 0.8;
+  transition: all 0.2s;
 }
 
 .btn-roll:hover {
-  transform: translate(-50%, -1px);
-  box-shadow: 0px 1px 7px rgb(155, 154, 154);
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   color: rgb(241, 237, 197);
 }
 
 .btn-roll:active {
-  transform: translate(-50%, 1px);
-  box-shadow: 0px 0px 2px rgb(155, 154, 154);
+  transform: translateY(1px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   color: rgb(241, 237, 197);
 }

@@ -7,7 +7,6 @@ export default function Dice(props) {
   return (
     <div className="dice-container">
       {props.diceArray.map((dice, i) => {
-        console.log('dice', dice.isFrozen);
         return (
           <Die
             diceArray={props.diceArray}

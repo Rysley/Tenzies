@@ -10,7 +10,6 @@ export default function Game() {
 
   function diceArrayInit() {
     setDiceArray((prevSate) => {
-      console.log(prevSate, 'prev');
       const newDiceArray = prevSate.map((dice, i) => {
         return {
           key: Math.random(),
@@ -19,7 +18,7 @@ export default function Game() {
           diceValue: dice.isFrozen ? dice.diceValue : getRandomNum(),
         };
       });
-      console.log(newDiceArray, 'arr');
+
       return newDiceArray;
     });
   }
@@ -28,24 +27,25 @@ export default function Game() {
     diceArrayInit();
   }
 
+  React.useEffect(() => {
+    const allEqual = diceArray.every(
+      (die) => die.diceValue === diceArray[0].diceValue
+    );
+    if (allEqual && diceArray != initArray) console.log('🎉 YOU WIN!! 🎉');
+  }, [diceArray]);
+
   function toggleFreeze(e) {
-    console.log(e.target, Number(e.target.innerHTML));
     setDiceArray((prevSate) => {
-      console.log(prevSate);
       const modState = prevSate.map((dice) => {
-        console.log(dice.id === Number(e.target.id));
         if (dice.id === Number(e.target.id)) {
           return { ...dice, isFrozen: !dice.isFrozen };
         } else {
           return dice;
         }
       });
-      console.log(modState);
       return modState;
-      //return [...prevSate];
     });
   }
-  console.log(diceArray);
 
   return (
     <div className="game-wrapper">
