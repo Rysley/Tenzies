@@ -2,36 +2,43 @@ import React from 'react';
 import Roll from './Roll';
 import Rules from './Rules';
 import Dice from './Dice';
+import { nanoid } from 'nanoid';
 
 export default function Game() {
-  const initArray = [...Array(10).keys()];
-  const getRandomNum = () => Math.floor(Math.random() * 6 + 1);
-  const [diceArray, setDiceArray] = React.useState(initArray);
+  function getInitArray() {
+    let randomArray = [];
+    for (let i = 0; i < 10; i++) {
+      randomArray.push({
+        id: i,
+        key: nanoid(),
+        isFrozen: false,
+        diceValue: getRandomNum(),
+      });
+    }
+    return randomArray;
+  }
 
-  function diceArrayInit() {
+  const getRandomNum = () => Math.ceil(Math.random() * 6);
+  const [diceArray, setDiceArray] = React.useState(getInitArray());
+
+  function castDice() {
     setDiceArray((prevSate) => {
       const newDiceArray = prevSate.map((dice, i) => {
         return {
-          key: Math.random(),
-          id: Math.random(),
+          ...dice,
           isFrozen: dice.isFrozen ? true : false,
           diceValue: dice.isFrozen ? dice.diceValue : getRandomNum(),
         };
       });
-
       return newDiceArray;
     });
-  }
-
-  function castDice() {
-    diceArrayInit();
   }
 
   React.useEffect(() => {
     const allEqual = diceArray.every(
       (die) => die.diceValue === diceArray[0].diceValue
     );
-    if (allEqual && diceArray != initArray) console.log('🎉 YOU WIN!! 🎉');
+    if (allEqual && diceArray != getInitArray()) console.log('🎉 YOU WIN!! 🎉');
   }, [diceArray]);
 
   function toggleFreeze(e) {
